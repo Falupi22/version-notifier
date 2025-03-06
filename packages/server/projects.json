@@ -1,0 +1,39 @@
+{
+    "projects": [
+        {
+            "id": "1",
+            "name": "NodeJS",
+            "repoUrl": "https://github.com/nodejs/node",
+            "color": "#ff5733",
+            "packageName": "node",
+            "isGlobal": true,
+            "currentVersion": "23.9.0",
+            "newestVersion": {
+                "version": "23.9.0",
+                "date": "",
+                "description": ""
+            },
+            "pathDestinations": [
+                "C:/Libraries/version-notifier/packages/common"
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Express",
+            "repoUrl": "https://github.com/nodejs/node",
+            "color": "#ff5733",
+            "packageName": "express",
+            "isGlobal": false,
+            "currentVersion": "23.9.0",
+            "newestVersion": {
+                "version": "23.9.0",
+                "date": "",
+                "description": ""
+            },
+            "pathDestinations": [
+                "C:/Libraries/version-notifier/packages/common",
+                "C:/Libraries/version-notifier/packages/server"
+            ]
+        }
+    ]
+}
