@@ -1,0 +1,74 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "NodeJS",
+      "repoUrl": "https://github.com/nodejs/node",
+      "color": "#06402B",
+      "packageName": "node",
+      "isGlobal": true,
+      "currentVersion": "23.8.0",
+      "newestVersion": {
+        "version": "23.9.0",
+        "description": "node",
+        "date": ""
+      },
+      "pathDestinations": ["C:/Libraries/version-notifier/packages/common"]
+    },
+    {
+      "id": "2",
+      "name": "Express",
+      "repoUrl": "https://github.com/nodejs/node",
+      "color": "#ff5733",
+      "packageName": "express",
+      "isGlobal": false,
+      "currentVersion": "23.8.0",
+      "newestVersion": {
+        "version": "4.21.2",
+        "description": "Fast, unopinionated, minimalist web framework",
+        "date": ""
+      },
+      "pathDestinations": [
+        "C:/Libraries/version-notifier/packages/common",
+        "C:/Libraries/version-notifier/packages/server"
+      ]
+    }
+  ],
+  "default": {
+    "projects": [
+      {
+        "id": "1",
+        "name": "NodeJS",
+        "repoUrl": "https://github.com/nodejs/node",
+        "color": "#00ff00",
+        "packageName": "node",
+        "isGlobal": true,
+        "currentVersion": "23.8.0",
+        "newestVersion": {
+          "version": "23.9.0",
+          "description": "node",
+          "date": ""
+        },
+        "pathDestinations": ["C:/Libraries/version-notifier/packages/common"]
+      },
+      {
+        "id": "2",
+        "name": "Express",
+        "repoUrl": "https://github.com/nodejs/node",
+        "color": "#ff5733",
+        "packageName": "express",
+        "isGlobal": false,
+        "currentVersion": "23.8.0",
+        "newestVersion": {
+          "version": "4.21.2",
+          "description": "Fast, unopinionated, minimalist web framework",
+          "date": ""
+        },
+        "pathDestinations": [
+          "C:/Libraries/version-notifier/packages/common",
+          "C:/Libraries/version-notifier/packages/server"
+        ]
+      }
+    ]
+  }
+}

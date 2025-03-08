@@ -1,3 +1,3 @@
-import { fetchInfo } from './service';
+import { fetchInfo, getProjects } from './service';
 
-export { fetchInfo };
+export { fetchInfo, getProjects };

@@ -1,4 +1,5 @@
 import { ClientProjectInfo, Project } from '@version-notifier/common';
+import axios, { AxiosResponse } from 'axios';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
@@ -43,6 +44,15 @@ export const diffVersions = async (
             `npm view ${project.packageName}@${latestVersion} description`
         );
 
+        let updates: string | undefined = undefined;
+
+        try {
+            const response = await axios.get(project.repoUrl);
+            updates = response.data?.body;
+        } catch (error) {
+            console.error(`Error fetching ${project.name} repo:`, error);
+        }
+
         update = {
             id: project.id.toString(),
             version: latestVersion,
@@ -50,6 +60,7 @@ export const diffVersions = async (
             color: project.color,
             packageName: project.packageName,
             description: description.trim(),
+            updates,
         };
     }
 

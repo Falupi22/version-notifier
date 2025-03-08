@@ -13,15 +13,21 @@
     "devDependencies": {
         "@types/cors": "^2.8.17",
         "@types/express": "^5.0.0",
+        "@types/node-cron": "^3.0.11",
         "@version-notifier/common": "^1.0.0",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.2"
     },
     "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
         "@version-notifier/common": "^1.0.0",
         "child_process": "^1.0.2",
         "cors": "^2.8.5",
         "express": "^4.21.2",
-        "http-status-codes": "^2.3.0"
+        "framer-motion": "^12.4.10",
+        "http-status-codes": "^2.3.0",
+        "node-cron": "^3.0.3",
+        "sse.js": "^2.6.0"
     }
 }

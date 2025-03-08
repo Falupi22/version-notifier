@@ -3,6 +3,7 @@ import {
     Project,
     ClientProjectInfo,
     ProgressData,
+    UpgradeData,
 } from '@version-notifier/common';
 import * as rawData from '../../projects.json';
 import { StatusCodes } from 'http-status-codes';
@@ -22,6 +23,7 @@ export const getUpdates = async (req: Request, res: Response) => {
                 packageName: project.packageName,
                 name: project.name,
                 description: project.newestVersion.description,
+                updates: project.newestVersion.updates,
                 version: project.newestVersion.version,
             };
         });
@@ -31,7 +33,9 @@ export const getUpdates = async (req: Request, res: Response) => {
 
 export const upgrade = async (req: Request, res: Response) => {
     try {
-        const projectIds: Array<string> = req.body.ids;
+        console.log('Upgrading...', req.body);
+        const projectIds: Array<string> = (JSON.parse(req.body) as UpgradeData)
+            .ids;
 
         res.setHeader('Content-Type', 'text/event-stream');
         res.setHeader('Cache-Control', 'no-cache');
@@ -59,9 +63,12 @@ export const upgrade = async (req: Request, res: Response) => {
                     );
                     completedDestinations++;
                     const status: ProgressData = {
-                        type: 'progress',
-                        progress:
-                            (completedDestinations / totalDestinations) * 100,
+                        data: {
+                            type: 'progress',
+                            progress:
+                                (completedDestinations / totalDestinations) *
+                                100,
+                        },
                     };
 
                     console.log('writing...');
@@ -69,7 +76,9 @@ export const upgrade = async (req: Request, res: Response) => {
 
                     if (!isInstalled) {
                         const error: ProgressData = {
-                            type: 'error',
+                            data: {
+                                type: 'error',
+                            },
                         };
 
                         res.write(`data: ${JSON.stringify(error)}\n\n`);

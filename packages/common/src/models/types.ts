@@ -2,6 +2,7 @@ export interface Version {
   version: string;
   date?: string;
   description?: string;
+  updates?: string;
 }
 
 export interface Project {
@@ -24,11 +25,18 @@ export interface ClientProjectInfo {
   version: string;
   name: string;
   description?: string;
+  updates?: string;
+}
+
+export interface UpgradeData {
+  ids: Array<string>;
 }
 
 export interface ProgressData {
-  progress?: number;
-  type: "progress" | "error";
+  data: {
+    progress?: number;
+    type: "progress" | "error";
+  };
 }
 
 export interface Data {
